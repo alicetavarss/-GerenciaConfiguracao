@@ -8,15 +8,15 @@
 ### Passo 1: Criando o Container
 
 Para iniciar, criamos o container com os privilégios necessários para gerenciar serviços de sistema.
-Bash
 
-```docker run -it --privileged --name GerenciaConfiguracao ubuntu:24.04 bash```
+
+```docker run -d --privileged --name ubuntu2404 ubuntu:24.04 bash -c "tail -f /dev/null```
 
 
 ### Passo 2: Atualizando o Sistema
 
 Sempre atualize a lista de pacotes e aplique as correções antes de instalar novos softwares.
-Bash
+
 
 ``apt-get update
 apt-get upgrade -y``
@@ -24,7 +24,7 @@ apt-get upgrade -y``
 ### Passo 3: Instalando o SSH e o Firewall
 
 Instalamos o servidor para acesso remoto e o ufw para proteção de rede.
-Bash
+
 
 ``apt-get install -y openssh-server ufw``
 
